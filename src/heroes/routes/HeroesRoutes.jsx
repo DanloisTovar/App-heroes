@@ -9,8 +9,14 @@ export const HeroesRoutes = () => {
 			<Navbar />
 			<div className="container">
 				<Routes>
-					<Route path="/marvel" element={<Marvelpage />} />
-					<Route path="/dc" element={<DCpage />} />
+					<Route
+						path="/marvel"
+						element={<Marvelpage publisher="Marvel Comics" />}
+					/>
+					<Route
+						path="/dc"
+						element={<DCpage publisher="DC Comics" />}
+					/>
 
 					{/* Search, Hero by id */}
 					<Route path="/search" element={<Search />} />
