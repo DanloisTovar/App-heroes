@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { HeroesList } from '../components/HeroesList';
+import { HeroesList } from '../components/';
 
 export const Marvelpage = ({ publisher }) => {
 	return (
