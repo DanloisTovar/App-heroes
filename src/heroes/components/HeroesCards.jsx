@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+const CharactersByHero = ({ alter_ego, characters }) => {
+	if (alter_ego === characters) return <></>;
+	return <li className="list-group-item">{characters}</li>;
+};
+
 export const HeroesCards = ({
 	id,
 	superhero,
@@ -26,9 +31,13 @@ export const HeroesCards = ({
 					<li className="list-group-item">{publisher}</li>
 					<li className="list-group-item">{first_appearance}</li>
 
-					{alter_ego !== characters && (
+					{/* {alter_ego !== characters && (
 						<li className="list-group-item">{characters}</li>
-					)}
+					)} */}
+					<CharactersByHero
+						characters={characters}
+						alter_ego={alter_ego}
+					/>
 				</ul>
 
 				<Link to={`heroe/${id}`} className="btn btn-primary">
@@ -45,5 +54,9 @@ HeroesCards.propTypes = {
 	publisher: PropTypes.string.isRequired,
 	alter_ego: PropTypes.string.isRequired,
 	first_appearance: PropTypes.string.isRequired,
+	characters: PropTypes.string.isRequired,
+};
+CharactersByHero.propTypes = {
+	alter_ego: PropTypes.string.isRequired,
 	characters: PropTypes.string.isRequired,
 };
