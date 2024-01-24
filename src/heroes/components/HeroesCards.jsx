@@ -40,7 +40,7 @@ export const HeroesCards = ({
 					/>
 				</ul>
 
-				<Link to={`heroe/${id}`} className="btn btn-primary">
+				<Link to={`/heroe/${id}`} className="btn btn-primary">
 					Mas info
 				</Link>
 			</div>
