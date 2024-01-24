@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export const HeroesCards = ({
 	id,
@@ -24,8 +25,15 @@ export const HeroesCards = ({
 				<ul className="list-group list-group-flush">
 					<li className="list-group-item">{publisher}</li>
 					<li className="list-group-item">{first_appearance}</li>
-					<li className="list-group-item">{characters}</li>
+
+					{alter_ego !== characters && (
+						<li className="list-group-item">{characters}</li>
+					)}
 				</ul>
+
+				<Link to={`heroe/${id}`} className="btn btn-primary">
+					Mas info
+				</Link>
 			</div>
 		</div>
 	);
